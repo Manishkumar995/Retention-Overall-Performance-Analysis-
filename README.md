@@ -34,7 +34,55 @@ Removed duplicates, nulls, and formatting errors.
 Standardized product/channel names.
 
 Created a Calendar table for time-based analysis.
+Customer Retention Rate (Core KPI)
 
+**Definition
+Customers active at end of period ÷ customers active at start of period**
+
+``` WITH base AS (
+    SELECT
+        customer_id,
+        MIN(transaction_date) AS first_txn,
+        MAX(transaction_date) AS last_txn
+    FROM transactions
+    GROUP BY customer_id
+)
+SELECT
+    COUNT(CASE WHEN last_txn >= DATE '2024-12-31' THEN 1 END) * 1.0 /
+    COUNT(CASE WHEN first_txn <= DATE '2024-01-01' THEN 1 END) AS retention_rate
+FROM base;
+```
+
+
+✔ Interview-safe
+✔ Works without subscriptions
+
+** Monthly Retention (Cohort Analysis)**
+
+```
+WITH cohorts AS (
+    SELECT
+        customer_id,
+        DATE_TRUNC('month', MIN(transaction_date)) AS cohort_month
+    FROM transactions
+    GROUP BY customer_id
+),
+activity AS (
+    SELECT
+        t.customer_id,
+        DATE_TRUNC('month', t.transaction_date) AS activity_month
+    FROM transactions t
+)
+SELECT
+    c.cohort_month,
+    a.activity_month,
+    COUNT(DISTINCT a.customer_id) AS active_customers
+FROM cohorts c
+JOIN activity a
+    ON c.customer_id = a.customer_id
+GROUP BY c.cohort_month, a.activity_month
+ORDER BY c.cohort_month, a.activity_month;
+```
 **Step 3: Data Modeling**
 
 **Designed a star schema with:**
