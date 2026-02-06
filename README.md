@@ -54,9 +54,6 @@ FROM base;
 ```
 
 
-✔ Interview-safe
-✔ Works without subscriptions
-
 ** Monthly Retention (Cohort Analysis)**
 
 ```
