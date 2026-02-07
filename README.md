@@ -100,8 +100,8 @@ Established one-to-many relationships for drill-down reporting.
 
 **Customer Tenure (Months)** = DATEDIFF(Customer[StartDate], TODAY(), MONTH)
 
-**RFM Segmentation:
-** 
+**RFM Segmentation:**
+
 Recency → Days since last renewal
 
 Frequency → Number of renewals per customer
@@ -151,3 +151,7 @@ High-value churn-risk customers for targeted retention campaigns.
 - Enabled data-driven retention strategies that improved policy retention by 14%.
 
 - Helped sales & operations teams proactively intervene with at-risk customers.
+
+
+MANISH KUMAR
+PROJECT
