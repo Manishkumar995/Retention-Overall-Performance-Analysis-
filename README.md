@@ -152,6 +152,5 @@ High-value churn-risk customers for targeted retention campaigns.
 
 - Helped sales & operations teams proactively intervene with at-risk customers.
 
+**MANISH KUMAR**
 
-MANISH KUMAR
-PROJECT
