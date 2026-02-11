@@ -1,4 +1,4 @@
-Project: Retention Analysis Dashboard
+**Project: Retention Analysis Dashboard**
 
 **1. Project Summary**
 
