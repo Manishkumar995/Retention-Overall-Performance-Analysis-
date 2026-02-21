@@ -7,7 +7,7 @@ The Retention Analysis Dashboard was designed to track and improve customer rete
 By combining Power BI with Excel data sources, the dashboard automated weekly reporting, provided real-time visibility into customer behavior, and reduced reporting efforts significantly.
 
 **2. Steps Used**
-**Step 1: Business Understanding**
+**1: Business Understanding**
 
 **Objective: Measure policy retention performance and identify customer segments at risk of churn.**
 
